@@ -6,17 +6,32 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import Hero from "../components/hero";
+import Price from "../components/price";
+import Footer from "../components/footer";
 
-const theme = createTheme();
-
-/* theme.typography.h1 = {
-  [theme.breakpoints.down("md")]: {
-    fontSize: "1rem"
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem"
+const theme = createTheme({
+  palette: {
+    primary: {
+      // light: will be calculated from palette.primary.main,
+      main: "#200F07"
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+    secondary: {
+      light: "#0066ff",
+      main: "#C08D5C",
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: "#ffcc00"
+    },
+    // Used by `getContrastText()` to maximize the contrast between
+    // the background and the text.
+    contrastThreshold: 3,
+    // Used by the functions below to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset: 0.2
   }
-}; */
+});
 
 const IndexPage = () => {
   return (
@@ -25,6 +40,8 @@ const IndexPage = () => {
         <CssBaseline />
 
         <Hero />
+        <Price />
+        <Footer />
       </ThemeProvider>
     </>
   );
