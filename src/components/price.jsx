@@ -10,7 +10,6 @@ const mortar = [
   createData("М50", 4440, 4500, 4620, 4740, 5040, 5200),
   createData("М75", 4920, 5100, 5400, 5580, 5880, 6180),
   createData("М100", 5520, 5760, 6000, 6180, 6480, 6780),
-  createData("М100 (Линамикс Р)", 5640, 0, 0, 0, 0, 0),
   createData("М150", 5820, 6000, 6180, 6420, 6780, 7080),
   createData("М200", 6480, 6780, 6960, 7260, 7560, 7800),
   createData("М300", 7680, 8100, 8400, 8700, 9000, 9420)
@@ -36,8 +35,8 @@ const Price = () => {
               Товарный бетон
             </Typography>
             <Grid container justifyContent="space-around">
-              <Grid item xs={1} sx={{ minWidth: "150px" }}>
-                <Typography variant="body2"> Наименование</Typography>
+              <Grid item xs={1} sx={{ minWidth: "70px" }}>
+                <Typography variant="body2">Марка</Typography>
               </Grid>
               <Grid item xs={1} textAlign="right">
                 <Typography variant="body2">Без добавок</Typography>
@@ -66,7 +65,7 @@ const Price = () => {
                 justifyContent="space-around"
                 sx={{ borderTop: "1px solid #A4A5A5" }}
               >
-                <Grid item xs={1} sx={{ minWidth: "150px" }}>
+                <Grid item xs={1} sx={{ minWidth: "70px" }}>
                   <Typography variant="body2">{row.name}</Typography>
                 </Grid>
                 <Grid item xs={1} textAlign="right">
