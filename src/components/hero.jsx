@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Box, Grid, Paper, Typography } from "@mui/material";
+import {} from "@mui/material";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Hero = () => {

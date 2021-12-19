@@ -1,18 +1,6 @@
 import * as React from "react";
 
-import { Container, Paper, Grid } from "@mui/material";
-import { styled } from "@mui/material/styles";
-
-/* const TableCell = styled(TC)`
-  font-size: 0.5rem;
-
-  width: 12%;
-  padding: 0.2rem;
-  border: 1px solid pink;
-  white-space: "nowrap";
-  overflow: "hidden";
-  text-overflow: "ellipsis";
-`; */
+import { Container, Box, Paper, Grid, Typography } from "@mui/material";
 
 function createData(name, price, price5, price10, price15, price20, price25) {
   return { name, price, price5, price10, price15, price20, price25 };
@@ -30,75 +18,81 @@ const mortar = [
 
 const Price = () => {
   return (
-    <Container maxWidth="xl" sx={{ bgcolor: "#200F07", p: 2 }}>
-      <Paper
-        sx={{
-          maxWidth: "800px",
-          mx: "auto",
-          bgcolor: "#D3B07A",
-          fontSize: "1rem"
-        }}
-      >
-        <Grid
-          container
-          justifyContent="space-around"
-          sx={{ fontWeight: "bold" }}
-        >
-          <Grid item xs={1} sx={{ minWidth: "150px" }}>
-            Наименование
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            Без добавок
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            -5С
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            -10С
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            -15С
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            -20С
-          </Grid>
-          <Grid item xs={1} textAlign="right">
-            -25С
-          </Grid>
-        </Grid>
+    <Box sx={{ bgcolor: "#A4A5A5" }}>
+      <Container sx={{ py: 3 }}>
+        <Container maxWidth="md" sx={{ textAlign: "center", mt: 8, mb: 8 }}>
+          <Typography variant="h2" color="primary" sx={{ mt: 8, mb: 1 }}>
+            Цены на продукцию
+          </Typography>
+        </Container>
 
-        {mortar.map(row => (
-          <Grid
-            container
-            key={row.name}
-            justifyContent="space-around"
-            sx={{ borderTop: "1px solid #A4A5A5" }}
-          >
-            <Grid item xs={1} sx={{ minWidth: "150px" }}>
-              {row.name}
+        <Container maxWidth="md">
+          <Paper sx={{ p: 1, mb: 8 }}>
+            <Typography
+              variant="h3"
+              color="primary"
+              sx={{ my: 3, textAlign: "center" }}
+            >
+              Товарный бетон
+            </Typography>
+            <Grid container justifyContent="space-around">
+              <Grid item xs={1} sx={{ minWidth: "150px" }}>
+                <Typography variant="body2"> Наименование</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2">Без добавок</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2">-5С</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2">-10С</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2"> -15С</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2">-20С</Typography>
+              </Grid>
+              <Grid item xs={1} textAlign="right">
+                <Typography variant="body2">-25С</Typography>
+              </Grid>
             </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price}
-            </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price5}
-            </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price10}
-            </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price15}
-            </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price20}
-            </Grid>
-            <Grid item xs={1} textAlign="right">
-              {row.price25}
-            </Grid>
-          </Grid>
-        ))}
-      </Paper>
-    </Container>
+
+            {mortar.map(row => (
+              <Grid
+                container
+                key={row.name}
+                justifyContent="space-around"
+                sx={{ borderTop: "1px solid #A4A5A5" }}
+              >
+                <Grid item xs={1} sx={{ minWidth: "150px" }}>
+                  <Typography variant="body2">{row.name}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price5}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price10}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price15}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price20}</Typography>
+                </Grid>
+                <Grid item xs={1} textAlign="right">
+                  <Typography variant="body2">{row.price25}</Typography>
+                </Grid>
+              </Grid>
+            ))}
+          </Paper>
+        </Container>
+      </Container>
+    </Box>
   );
 };
 export default Price;

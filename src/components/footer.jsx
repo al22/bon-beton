@@ -2,7 +2,7 @@ import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material";
 
-import { Container, Grid, Box, Typography, Link, Icon } from "@mui/material";
+import { Container, Grid, Typography, Link, Icon } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -34,7 +34,7 @@ const data = [
 const Footer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
-  console.log(theme);
+
   return (
     <Container
       maxWidth="xl"
