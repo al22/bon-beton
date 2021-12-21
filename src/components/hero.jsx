@@ -7,12 +7,18 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Hero = () => {
-  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const isMediumScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("sm"));
 
   return (
-    <div style={{ display: "grid", height: isSmallScreen ? "auto" : "100vh" }}>
+    <div
+      style={{
+        display: "grid",
+        height: isSmallScreen ? "auto" : "100vh"
+      }}
+    >
       {/* You can use a GatsbyImage component if the image is dynamic */}
-      {isSmallScreen ? (
+      {isMediumScreen ? (
         <StaticImage
           style={{
             gridArea: "1/1"
