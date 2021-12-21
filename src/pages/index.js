@@ -14,6 +14,8 @@ import Quality from "../components/quality";
 import Price from "../components/price";
 import Footer from "../components/footer";
 
+//import RobotoMedium from "../Roboto/Roboto-Medium.ttf";
+
 let theme = createTheme({
   palette: {
     primary: {
@@ -40,6 +42,19 @@ let theme = createTheme({
     }
   },
   typography: {
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      "Helvetica Neue",
+      "Arial",
+      "sans-serif",
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol"
+    ].join(","),
+
     h1: { fontSize: "5rem", fontWeight: 400 },
     h2: { fontSize: "3rem", fontWeight: 400 },
     h3: { fontSize: "2rem" },
@@ -58,6 +73,7 @@ const IndexPage = () => {
         <Hero />
         <Quality />
         <Price />
+
         <Footer />
       </ThemeProvider>
     </>

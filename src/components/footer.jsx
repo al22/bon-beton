@@ -10,24 +10,39 @@ import EmailIcon from "@mui/icons-material/Email";
 const data = [
   {
     id: 1,
-    title: "Адрес",
-    text: "665718, Иркутская область, г. Братск, Промплощадка БЛПК",
-    href: "https://yandex.ru/maps/-/CCUyYKwL~D",
-    icon: <LocationOnIcon />
+    icon: <LocationOnIcon />,
+    items: [
+      {
+        id: 11,
+        title: "Адрес",
+        text: "665718, Иркутская область, г. Братск, Промплощадка БЛПК",
+        href: "https://yandex.ru/maps/-/CCUyYKwL~D"
+      }
+    ]
   },
   {
     id: 2,
-    title: "Отдел продаж",
-    text: "+7 (3953) 27-09-27",
-    href: "tel: 8-3953-27-09-27",
-    icon: <PhoneIcon />
+    icon: <PhoneIcon />,
+    items: [
+      {
+        id: 21,
+        title: "Отдел продаж",
+        text: "+7 (3953) 27-09-27",
+        href: "tel: 8-3953-27-09-27"
+      }
+    ]
   },
   {
     id: 3,
-    title: "Почта",
-    text: "info@bon-beton.ru",
-    href: "mailto:info@bon-beton.ru",
-    icon: <EmailIcon />
+    icon: <EmailIcon />,
+    items: [
+      {
+        id: 31,
+        title: "Почта",
+        text: "info@bon-beton.ru",
+        href: "mailto:info@bon-beton.ru"
+      }
+    ]
   }
 ];
 
@@ -60,24 +75,28 @@ const Footer = () => {
             <Icon sx={{ color: theme.palette.secondary.main }}>
               {item.icon}
             </Icon>
-            <Typography
-              variant="h6"
-              sx={{ color: theme.palette.secondary.main }}
-            >
-              {item.title}
-            </Typography>
+            {item.items.map(item => (
+              <div key={item.id}>
+                <Typography
+                  variant="h6"
+                  sx={{ color: theme.palette.secondary.main }}
+                >
+                  {item.title}
+                </Typography>
 
-            <Link
-              sx={{
-                display: "block",
-                color: "#A4A5A5",
-                cursor: "pointer",
-                textDecoration: "none"
-              }}
-              href={item.href}
-            >
-              {item.text}
-            </Link>
+                <Link
+                  sx={{
+                    display: "block",
+                    color: "#A4A5A5",
+                    cursor: "pointer",
+                    textDecoration: "none"
+                  }}
+                  href={item.href}
+                >
+                  {item.text}
+                </Link>
+              </div>
+            ))}
           </Grid>
         ))}
       </Grid>
