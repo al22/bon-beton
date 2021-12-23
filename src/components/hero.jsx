@@ -14,16 +14,16 @@ const Hero = () => {
     <div
       style={{
         display: "grid",
-        height: isSmallScreen ? "auto" : "100vh"
+        height: isSmallScreen ? "500px" : "100vh"
       }}
     >
       {/* You can use a GatsbyImage component if the image is dynamic */}
       {isMediumScreen ? (
         <StaticImage
           style={{
-            gridArea: "1/1"
+            gridArea: "1/1",
             // You can set a maximum height for the image, if you wish.
-            // maxHeight: 600,
+            minHeight: 400
           }}
           layout="fullWidth"
           // You can optionally force an aspect ratio for the generated image
@@ -37,9 +37,9 @@ const Hero = () => {
       ) : (
         <StaticImage
           style={{
-            gridArea: "1/1"
+            gridArea: "1/1",
             // You can set a maximum height for the image, if you wish.
-            // maxHeight: 600,
+            minHeight: 675
           }}
           layout="fullWidth"
           // You can optionally force an aspect ratio for the generated image
@@ -92,46 +92,49 @@ const Hero = () => {
 
           <Grid item sx={{ width: "100%", mt: "auto", mb: { xs: 3, md: 6 } }}>
             <Grid container justifyContent="space-around" spacing={3}>
-              <Grid item xs={12} md={5} sx={{ mx: 3 }}>
+              <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
                 <Button
-                  fullWidth
                   startIcon={<PhoneIcon />}
                   component={Link}
                   href="tel: 8-3953-27-09-27"
                   variant="contained"
                   size="large"
                   sx={{
+                    width: "300px",
                     textTransform: "none",
                     color: "#200F07",
                     bgcolor: "#D3B07A",
                     "&:hover": {
                       backgroundColor: "#fff"
-                    }
+                    },
+                    mb: isSmallScreen ? 3 : 0
                   }}
                 >
                   Звоните +7 (3953) 27-09-27
                 </Button>
               </Grid>
-              <Grid item xs={12} md={5} sx={{ mx: 3 }}>
-                <Button
-                  fullWidth
-                  startIcon={<EmailIcon />}
-                  component={Link}
-                  href="mailto:info@bon-beton.ru"
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    textTransform: "none",
-                    color: "#200F07",
-                    bgcolor: "#D3B07A",
-                    "&:hover": {
-                      backgroundColor: "#fff"
-                    }
-                  }}
-                >
-                  Пишите на info@bon-beton.ru
-                </Button>
-              </Grid>
+              {!isSmallScreen && (
+                <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
+                  <Button
+                    startIcon={<EmailIcon />}
+                    component={Link}
+                    href="mailto:info@bon-beton.ru"
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      width: "300px",
+                      textTransform: "none",
+                      color: "#200F07",
+                      bgcolor: "#D3B07A",
+                      "&:hover": {
+                        backgroundColor: "#fff"
+                      }
+                    }}
+                  >
+                    Пишите на info@bon-beton.ru
+                  </Button>
+                </Grid>
+              )}
             </Grid>
           </Grid>
         </Grid>

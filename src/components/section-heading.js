@@ -3,7 +3,13 @@ import { Box, Typography } from "@mui/material";
 
 const SectionHeading = ({ title, subtitle }) => {
   return (
-    <Box sx={{ maxWidth: "600px", pt: 8, mb: { xs: 16, md: 8 }, mx: "auto" }}>
+    <Box
+      sx={{
+        pt: 8,
+        mb: { xs: 12, md: 8 },
+        textAlign: "center"
+      }}
+    >
       <Typography
         variant="h2"
         component="h2"
@@ -12,7 +18,10 @@ const SectionHeading = ({ title, subtitle }) => {
       >
         {title}
       </Typography>
-      <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
+      <Typography
+        variant="subtitle1"
+        sx={{ px: { sx: 0, sm: 8, md: 16, lg: 32 } }}
+      >
         {subtitle}
       </Typography>
     </Box>

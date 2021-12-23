@@ -1,13 +1,24 @@
 import * as React from "react";
 
-import { Container, Box, Paper, Grid, Typography } from "@mui/material";
+import {
+  Container,
+  Box,
+  Paper,
+  Table,
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  Typography,
+  ListItem
+} from "@mui/material";
 import SectionHeading from "./section-heading";
 
 function createData(name, price, price5, price10, price15, price20, price25) {
   return { name, price, price5, price10, price15, price20, price25 };
 }
 
-const mortar = [
+const concrete = [
   createData("М50", 4440, 4500, 4620, 4740, 5040, 5200),
   createData("М75", 4920, 5100, 5400, 5580, 5880, 6180),
   createData("М100", 5520, 5760, 6000, 6180, 6480, 6780),
@@ -19,12 +30,11 @@ const mortar = [
 const Price = () => {
   return (
     <Box sx={{ bgcolor: "#EEE" }}>
-      <SectionHeading
-        title="Цены на продукцию"
-        subtitle="Цены указаны в рублях с учетом НДС (20%) за 1 м3 продукции"
-      />
-
       <Container maxWidth="md">
+        <SectionHeading
+          title="Цены на продукцию"
+          subtitle="Цены указаны в рублях с учетом НДС (20%) за 1 м3 продукции"
+        />
         <Paper sx={{ p: 1 }}>
           <Typography
             variant="h3"
@@ -33,81 +43,59 @@ const Price = () => {
           >
             Товарный бетон
           </Typography>
-          <Grid
-            container
-            justifyContent="space-around"
-            sx={{ borderTop: "1px solid #A4A5A5", bgcolor: "#EEE" }}
-          >
-            <Grid item xs={1} sx={{ minWidth: "70px", my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                Марка
-              </Typography>
-            </Grid>
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                Без добавок
-              </Typography>
-            </Grid>
 
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                -5С°
-              </Typography>
-            </Grid>
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                -10С°
-              </Typography>
-            </Grid>
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                -15С°
-              </Typography>
-            </Grid>
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                -20С°
-              </Typography>
-            </Grid>
-            <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                -25С°
-              </Typography>
-            </Grid>
-          </Grid>
-
-          {mortar.map(row => (
-            <Grid
-              container
-              key={row.name}
-              justifyContent="space-around"
-              sx={{ borderTop: "1px solid #A4A5A5", minHeight: "30px" }}
-            >
-              <Grid item xs={1} sx={{ minWidth: "70px", my: "auto" }}>
-                <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                  {row.name}
-                </Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price}</Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price5}</Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price10}</Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price15}</Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price20}</Typography>
-              </Grid>
-              <Grid item xs={1} textAlign="right" sx={{ my: "auto" }}>
-                <Typography variant="body2">{row.price25}</Typography>
-              </Grid>
-            </Grid>
-          ))}
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell style={{ minWidth: 100, maxWidth: 100 }}>
+                  Марка
+                </TableCell>
+                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                  Без добавки
+                </TableCell>
+                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>-5</TableCell>
+                <TableCell sstyle={{ minWidth: 50, maxWidth: 50 }}>
+                  -10
+                </TableCell>
+                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                  -15
+                </TableCell>
+                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                  -20
+                </TableCell>
+                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                  -25
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {concrete.map((row, idx) => (
+                <TableRow key={idx}>
+                  <TableCell style={{ minWidth: 100, maxWidth: 100 }}>
+                    {row.name}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price5}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price10}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price15}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price20}
+                  </TableCell>
+                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
+                    {row.price25}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </Paper>
       </Container>
     </Box>
