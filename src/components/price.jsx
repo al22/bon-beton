@@ -17,8 +17,8 @@ import SectionHeading from "./section-heading";
 
 const TableCell = styled(TableCellMUI)({
   textAlign: "right",
-  minWidth: 60,
-
+  minWidth: 40,
+  maxWidth: 40,
   fontSize: "0.7rem"
 });
 
