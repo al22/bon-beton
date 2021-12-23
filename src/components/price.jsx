@@ -1,4 +1,5 @@
 import * as React from "react";
+import { styled } from "@mui/system";
 
 import {
   Container,
@@ -8,11 +9,22 @@ import {
   TableHead,
   TableBody,
   TableRow,
-  TableCell,
-  Typography,
-  ListItem
+  TableCell as TableCellMUI,
+  Typography
 } from "@mui/material";
+
 import SectionHeading from "./section-heading";
+
+const TableCell = styled(TableCellMUI)({
+  textAlign: "right",
+  minWidth: 60,
+
+  fontSize: "0.7rem"
+});
+
+const TableCellHead = styled(TableCell)({
+  fontWeight: "bold"
+});
 
 function createData(name, price, price5, price10, price15, price20, price25) {
   return { name, price, price5, price10, price15, price20, price25 };
@@ -47,51 +59,25 @@ const Price = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell style={{ minWidth: 100, maxWidth: 100 }}>
-                  Марка
-                </TableCell>
-                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                  Без добавки
-                </TableCell>
-                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>-5</TableCell>
-                <TableCell sstyle={{ minWidth: 50, maxWidth: 50 }}>
-                  -10
-                </TableCell>
-                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                  -15
-                </TableCell>
-                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                  -20
-                </TableCell>
-                <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                  -25
-                </TableCell>
+                <TableCellHead>Марка</TableCellHead>
+                <TableCellHead>Без добавки</TableCellHead>
+                <TableCellHead>-5</TableCellHead>
+                <TableCellHead>-10</TableCellHead>
+                <TableCellHead>-15</TableCellHead>
+                <TableCellHead>-20</TableCellHead>
+                <TableCellHead>-25</TableCellHead>
               </TableRow>
             </TableHead>
             <TableBody>
               {concrete.map((row, idx) => (
                 <TableRow key={idx}>
-                  <TableCell style={{ minWidth: 100, maxWidth: 100 }}>
-                    {row.name}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price5}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price10}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price15}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price20}
-                  </TableCell>
-                  <TableCell style={{ minWidth: 50, maxWidth: 50 }}>
-                    {row.price25}
-                  </TableCell>
+                  <TableCell sx={{ fontWeight: "bold" }}>{row.name}</TableCell>
+                  <TableCell>{row.price}</TableCell>
+                  <TableCell>{row.price5}</TableCell>
+                  <TableCell>{row.price10}</TableCell>
+                  <TableCell>{row.price15}</TableCell>
+                  <TableCell>{row.price20}</TableCell>
+                  <TableCell>{row.price25}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
