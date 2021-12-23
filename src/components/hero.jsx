@@ -23,7 +23,7 @@ const Hero = () => {
           style={{
             gridArea: "1/1",
             // You can set a maximum height for the image, if you wish.
-            minHeight: 400
+            minHeight: 550
           }}
           layout="fullWidth"
           // You can optionally force an aspect ratio for the generated image

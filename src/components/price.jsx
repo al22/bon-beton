@@ -15,16 +15,27 @@ import {
 
 import SectionHeading from "./section-heading";
 
-const TableCell = styled(TableCellMUI)({
+const TableCell = styled(TableCellMUI)(({ theme }) => ({
   textAlign: "right",
   minWidth: 40,
   maxWidth: 40,
-  fontSize: "0.7rem"
-});
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.7rem"
+  },
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "1rem"
+  },
 
-const TableCellHead = styled(TableCell)({
-  fontWeight: "bold"
-});
+  padding: 4,
+  margin: 0
+}));
+
+const TableCellHead = styled(TableCell)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  fontWeight: "bold",
+  color: "#EEE",
+  textAlign: "right"
+}));
 
 function createData(name, price, price5, price10, price15, price20, price25) {
   return { name, price, price5, price10, price15, price20, price25 };
@@ -41,13 +52,13 @@ const concrete = [
 
 const Price = () => {
   return (
-    <Box sx={{ bgcolor: "#EEE" }}>
+    <Box sx={{ bgcolor: "#EEE", pb: 8 }}>
       <Container maxWidth="md">
         <SectionHeading
           title="Цены на продукцию"
           subtitle="Цены указаны в рублях с учетом НДС (20%) за 1 м3 продукции"
         />
-        <Paper sx={{ p: 1 }}>
+        <Paper sx={{ p: 2 }}>
           <Typography
             variant="h3"
             color="primary"
@@ -59,19 +70,31 @@ const Price = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCellHead>Марка</TableCellHead>
-                <TableCellHead>Без добавки</TableCellHead>
-                <TableCellHead>-5</TableCellHead>
-                <TableCellHead>-10</TableCellHead>
-                <TableCellHead>-15</TableCellHead>
-                <TableCellHead>-20</TableCellHead>
-                <TableCellHead>-25</TableCellHead>
+                <TableCellHead rowSpan={2} sx={{ textAlign: "left" }}>
+                  Марка
+                </TableCellHead>
+                <TableCellHead rowSpan={2}>Без добавки</TableCellHead>
+                <TableCellHead
+                  colSpan={5}
+                  sx={{ textAlign: "center", border: "none" }}
+                >
+                  С добавкой до
+                </TableCellHead>
+              </TableRow>
+              <TableRow>
+                <TableCellHead>-5 °C</TableCellHead>
+                <TableCellHead>-10 °C</TableCellHead>
+                <TableCellHead>-15 °C</TableCellHead>
+                <TableCellHead>-20 °C</TableCellHead>
+                <TableCellHead>-25 °C</TableCellHead>
               </TableRow>
             </TableHead>
             <TableBody>
               {concrete.map((row, idx) => (
                 <TableRow key={idx}>
-                  <TableCell sx={{ fontWeight: "bold" }}>{row.name}</TableCell>
+                  <TableCell sx={{ fontWeight: "bold", textAlign: "left" }}>
+                    {row.name}
+                  </TableCell>
                   <TableCell>{row.price}</TableCell>
                   <TableCell>{row.price5}</TableCell>
                   <TableCell>{row.price10}</TableCell>
