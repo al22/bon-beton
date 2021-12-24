@@ -25,8 +25,8 @@ const TableCell = styled(TableCellMUI)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     fontSize: "1rem"
   },
-
-  padding: 4,
+  border: "1px solid white",
+  padding: 8,
   margin: 0
 }));
 
@@ -34,7 +34,8 @@ const TableCellHead = styled(TableCell)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   fontWeight: "bold",
   color: "#EEE",
-  textAlign: "right"
+  textAlign: "right",
+  lineHeight: "1rem"
 }));
 
 function createData(name, price, price5, price10, price15, price20, price25) {
@@ -74,10 +75,7 @@ const Price = () => {
                   Марка
                 </TableCellHead>
                 <TableCellHead rowSpan={2}>Без добавки</TableCellHead>
-                <TableCellHead
-                  colSpan={5}
-                  sx={{ textAlign: "center", border: "none" }}
-                >
+                <TableCellHead colSpan={5} sx={{ textAlign: "center" }}>
                   С добавкой до
                 </TableCellHead>
               </TableRow>
