@@ -44,7 +44,7 @@ const Quality = () => {
 
   return (
     <Box>
-      <Container>
+      <Container sx={{ maxWidth: { sm: "500px", md: "900px" } }}>
         <SectionHeading
           title="Качество под контролем"
           subtitle='В 2020 году Строительная лаборатория ООО "Бон-Бетон" прошла оценку о состоянии измерений в лаборатории, что значительно повлияло на качество выпускаемой нами продукции.'
@@ -56,8 +56,8 @@ const Quality = () => {
             <Grid
               key={item.image}
               container
-              spacing={isSmallScreen ? 2 : 16}
-              sx={{ mb: 16, px: { xs: 1, sm: 12, md: 6, lg: 8 } }}
+              spacing={isSmallScreen ? 2 : 8}
+              sx={{ mb: 16 }}
               direction={
                 isSmallScreen
                   ? "column-reverse"

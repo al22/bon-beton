@@ -17,17 +17,23 @@ import SectionHeading from "./section-heading";
 
 const TableCell = styled(TableCellMUI)(({ theme }) => ({
   textAlign: "right",
-  minWidth: 40,
-  maxWidth: 40,
-  [theme.breakpoints.down("sm")]: {
-    fontSize: "0.7rem"
+  minWidth: 30,
+  maxWidth: 30,
+  [theme.breakpoints.only("xs")]: {
+    fontSize: "0.5rem",
+    padding: "4px 2px"
+  },
+  [theme.breakpoints.only("sm")]: {
+    fontSize: "0.7rem",
+    padding: 2
   },
   [theme.breakpoints.up("sm")]: {
-    fontSize: "1rem"
+    fontSize: "1rem",
+    padding: 8
   },
-  border: "1px solid white",
-  padding: 8,
-  margin: 0
+
+  margin: 0,
+  borderBottom: `1px solid ${theme.palette.primary.grey}`
 }));
 
 const TableCellHead = styled(TableCell)(({ theme }) => ({
@@ -35,7 +41,8 @@ const TableCellHead = styled(TableCell)(({ theme }) => ({
   fontWeight: "bold",
   color: "#EEE",
   textAlign: "right",
-  lineHeight: "1rem"
+  lineHeight: "1rem",
+  border: "1px solid white"
 }));
 
 function createData(name, price, price5, price10, price15, price20, price25) {
@@ -59,7 +66,7 @@ const Price = () => {
           title="Цены на продукцию"
           subtitle="Цены указаны в рублях с учетом НДС (20%) за 1 м3 продукции"
         />
-        <Paper sx={{ p: 2 }}>
+        <Paper sx={{ p: { xs: 1, sm: 2 } }}>
           <Typography
             variant="h3"
             color="primary"
