@@ -17,11 +17,11 @@ import SectionHeading from "./section-heading";
 
 const TableCell = styled(TableCellMUI)(({ theme }) => ({
   textAlign: "right",
-  minWidth: 30,
-  maxWidth: 30,
+  minWidth: 35,
+  maxWidth: 35,
   [theme.breakpoints.only("xs")]: {
-    fontSize: "0.5rem",
-    padding: "4px 2px"
+    fontSize: "0.6rem",
+    padding: 2
   },
   [theme.breakpoints.only("sm")]: {
     fontSize: "0.7rem",
@@ -30,6 +30,10 @@ const TableCell = styled(TableCellMUI)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     fontSize: "1rem",
     padding: 8
+  },
+  [theme.breakpoints.down(321)]: {
+    fontSize: "0.5rem",
+    padding: [0.5, 1]
   },
 
   margin: 0,
