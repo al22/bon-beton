@@ -1,22 +1,19 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { StaticImage } from "gatsby-plugin-image";
-import { Grid, Typography, Button, Link } from "@mui/material";
+import { Box, Grid, Typography, Button, Link } from "@mui/material";
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import { maxHeight } from "@mui/system";
 
 const Hero = () => {
   const isMediumScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
-  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("sm"));
 
   return (
-    <div
-      style={{
-        display: "grid"
-        //maxHeight: "90vh"
-        //height: isSmallScreen ? "500px" : "100vh"
+    <Box
+      sx={{
+        display: "grid",
+        height: { xs: "auto", lg: "100vh" }
       }}
     >
       {/* You can use a GatsbyImage component if the image is dynamic */}
@@ -54,8 +51,8 @@ const Hero = () => {
         />
       )}
 
-      <div
-        style={{
+      <Box
+        sx={{
           // By using the same grid area for both, they are stacked on top of each other
           gridArea: "1/1",
           position: "relative",
@@ -66,15 +63,14 @@ const Hero = () => {
       >
         {/* Any content here will be centered in the component */}
 
-        <div>
+        <Box>
           <Typography
             variant="h1"
             component="h1"
             sx={{
               textAlign: "center",
-              mt: 2,
-
-              color: "grey.200"
+              color: "grey.200",
+              pt: { xs: 1, sm: 2, md: 3 }
             }}
           >
             Бетон и раствор
@@ -85,9 +81,14 @@ const Hero = () => {
           >
             От надежного производителя в г. Братске
           </Typography>
-        </div>
+        </Box>
 
-        <div style={{ position: "absolute", bottom: "2rem" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: { xs: "1rem", sm: "2rem", md: "3rem" }
+          }}
+        >
           <Grid container justifyContent="space-around" spacing={3}>
             <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
               <Button
@@ -103,39 +104,37 @@ const Hero = () => {
                   bgcolor: "#D3B07A",
                   "&:hover": {
                     backgroundColor: "#fff"
-                  },
-                  mb: isSmallScreen ? 3 : 0
+                  }
                 }}
               >
                 Звоните +7 (3953) 27-09-27
               </Button>
             </Grid>
-            {!isSmallScreen && (
-              <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
-                <Button
-                  startIcon={<EmailIcon />}
-                  component={Link}
-                  href="mailto:info@bon-beton.ru"
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    width: "300px",
-                    textTransform: "none",
-                    color: "#200F07",
-                    bgcolor: "#D3B07A",
-                    "&:hover": {
-                      backgroundColor: "#fff"
-                    }
-                  }}
-                >
-                  Пишите на info@bon-beton.ru
-                </Button>
-              </Grid>
-            )}
+            <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
+              <Button
+                startIcon={<EmailIcon />}
+                component={Link}
+                href="mailto:info@bon-beton.ru"
+                variant="contained"
+                size="large"
+                sx={{
+                  width: "300px",
+                  textTransform: "none",
+                  color: "#200F07",
+                  bgcolor: "#D3B07A",
+                  "&:hover": {
+                    backgroundColor: "#fff"
+                  },
+                  display: { xs: "none", md: "flex" }
+                }}
+              >
+                Пишите на info@bon-beton.ru
+              </Button>
+            </Grid>
           </Grid>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

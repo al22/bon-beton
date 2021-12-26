@@ -17,15 +17,17 @@ import SectionHeading from "./section-heading";
 
 const TableCell = styled(TableCellMUI)(({ theme }) => ({
   textAlign: "right",
-  minWidth: 35,
-  maxWidth: 35,
+
   [theme.breakpoints.only("xs")]: {
-    fontSize: "0.6rem",
-    padding: 2
+    fontSize: "0.5rem",
+    padding: 2,
+    minWidth: 30,
+    maxWidth: 100
   },
   [theme.breakpoints.only("sm")]: {
-    fontSize: "0.7rem",
-    padding: 2
+    fontSize: "0.8rem",
+    padding: 2,
+    maxWidth: 100
   },
   [theme.breakpoints.up("sm")]: {
     fontSize: "1rem",
@@ -33,7 +35,9 @@ const TableCell = styled(TableCellMUI)(({ theme }) => ({
   },
   [theme.breakpoints.down(321)]: {
     fontSize: "0.5rem",
-    padding: [0.5, 1]
+    padding: 1,
+    minWidth: 20,
+    maxWidth: 40
   },
 
   margin: 0,
@@ -53,10 +57,11 @@ function createData(name, price, price5, price10, price15, price20, price25) {
   return { name, price, price5, price10, price15, price20, price25 };
 }
 
-const concrete = [
+const mortyr = [
   createData("М50", 4440, 4500, 4620, 4740, 5040, 5200),
   createData("М75", 4920, 5100, 5400, 5580, 5880, 6180),
   createData("М100", 5520, 5760, 6000, 6180, 6480, 6780),
+  createData("М100 (Линамикс Р)", 5520, 0, 0, 0, 0, 0),
   createData("М150", 5820, 6000, 6180, 6420, 6780, 7080),
   createData("М200", 6480, 6780, 6960, 7260, 7560, 7800),
   createData("М300", 7680, 8100, 8400, 8700, 9000, 9420)
@@ -74,9 +79,9 @@ const Price = () => {
           <Typography
             variant="h3"
             color="primary"
-            sx={{ textAlign: "center", my: 2 }}
+            sx={{ textAlign: "center", mt: 2, mb: 3 }}
           >
-            Товарный бетон
+            Строительный раствор
           </Typography>
 
           <Table>
@@ -85,7 +90,9 @@ const Price = () => {
                 <TableCellHead rowSpan={2} sx={{ textAlign: "left" }}>
                   Марка
                 </TableCellHead>
-                <TableCellHead rowSpan={2}>Без добавки</TableCellHead>
+                <TableCellHead rowSpan={2} sx={{ width: 0 }}>
+                  Без добавки
+                </TableCellHead>
                 <TableCellHead colSpan={5} sx={{ textAlign: "center" }}>
                   С добавкой до
                 </TableCellHead>
@@ -99,17 +106,17 @@ const Price = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {concrete.map((row, idx) => (
+              {mortyr.map((row, idx) => (
                 <TableRow key={idx}>
                   <TableCell sx={{ fontWeight: "bold", textAlign: "left" }}>
                     {row.name}
                   </TableCell>
-                  <TableCell>{row.price}</TableCell>
-                  <TableCell>{row.price5}</TableCell>
-                  <TableCell>{row.price10}</TableCell>
-                  <TableCell>{row.price15}</TableCell>
-                  <TableCell>{row.price20}</TableCell>
-                  <TableCell>{row.price25}</TableCell>
+                  <TableCell>{row.price !== 0 ? row.price : "-"}</TableCell>
+                  <TableCell>{row.price5 !== 0 ? row.price5 : "-"}</TableCell>
+                  <TableCell>{row.price10 !== 0 ? row.price10 : "-"}</TableCell>
+                  <TableCell>{row.price15 !== 0 ? row.price15 : "-"}</TableCell>
+                  <TableCell>{row.price20 !== 0 ? row.price20 : "-"}</TableCell>
+                  <TableCell>{row.price25 !== 0 ? row.price25 : "-"}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

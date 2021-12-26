@@ -18,12 +18,7 @@ const SectionHeading = ({ title, subtitle }) => {
       >
         {title}
       </Typography>
-      <Typography
-        variant="subtitle1"
-        sx={{ px: { sx: 0, sm: 8, md: 16, lg: 32 } }}
-      >
-        {subtitle}
-      </Typography>
+      <Typography variant="subtitle1">{subtitle}</Typography>
     </Box>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
+
 import { useTheme } from "@mui/material";
 
 import { Container, Grid, Typography, Link, Icon } from "@mui/material";
@@ -48,19 +48,13 @@ const data = [
 
 const Footer = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
 
   return (
     <Container
       maxWidth="xl"
       sx={{ bgcolor: theme.palette.primary.main, py: 2 }}
     >
-      <Grid
-        container
-        columnSpacing={1}
-        justifyContent="space-around"
-        //alignItems="center"
-      >
+      <Grid container columnSpacing={1} justifyContent="space-around">
         {data.map(item => (
           <Grid
             item
@@ -69,7 +63,7 @@ const Footer = () => {
             md={3}
             sx={{
               my: 2,
-              textAlign: isSmallScreen ? "center" : "left"
+              textAlign: { xs: "center", md: "left" }
             }}
           >
             <Icon sx={{ color: theme.palette.secondary.main }}>
