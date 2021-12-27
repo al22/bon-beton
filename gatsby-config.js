@@ -13,6 +13,15 @@ module.exports = {
         name: `pages`,
         path: `${__dirname}/src/images/quality/`
       }
+    },
+
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/ // See below to configure properly
+        }
+      }
     }
   ]
 };

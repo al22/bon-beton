@@ -5,16 +5,12 @@ import {
   responsiveFontSizes
 } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
 import Hero from "../components/hero";
 import Quality from "../components/quality";
-import Price from "../components/price";
+import ProductsPrice from "../components/products-price";
+import DeliveryPrice from "../components/delivery-price";
+import GoogleMap from "../components/map";
 import Footer from "../components/footer";
-
-//import RobotoMedium from "../Roboto/Roboto-Medium.ttf";
 
 let theme = createTheme({
   palette: {
@@ -72,8 +68,9 @@ const IndexPage = () => {
 
         <Hero />
         <Quality />
-        <Price />
-
+        <ProductsPrice />
+        <DeliveryPrice />
+        <GoogleMap />
         <Footer />
       </ThemeProvider>
     </>

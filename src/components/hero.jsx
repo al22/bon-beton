@@ -13,7 +13,8 @@ const Hero = () => {
     <Box
       sx={{
         display: "grid",
-        height: { xs: "auto", lg: "100vh" }
+        minHeight: { lg: "100vh" },
+        maxHeight: { lg: "100vh" }
       }}
     >
       {/* You can use a GatsbyImage component if the image is dynamic */}

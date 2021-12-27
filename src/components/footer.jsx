@@ -63,7 +63,7 @@ const Footer = () => {
             md={3}
             sx={{
               my: 2,
-              textAlign: { xs: "center", md: "left" }
+              textAlign: "center"
             }}
           >
             <Icon sx={{ color: theme.palette.secondary.main }}>
