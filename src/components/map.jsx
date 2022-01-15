@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import GoogleMapReact from "google-map-react";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 

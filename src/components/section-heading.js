@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 
-const SectionHeading = ({ title, subtitle }) => {
+const SectionHeading = ({ title, subtitle, light }) => {
   return (
     <Box
       sx={{
@@ -13,12 +13,17 @@ const SectionHeading = ({ title, subtitle }) => {
       <Typography
         variant="h2"
         component="h2"
-        color="primary"
+        color={light ? "white" : "primary"}
         sx={{ textAlign: "center", mb: 2 }}
       >
         {title}
       </Typography>
-      <Typography variant="subtitle1">{subtitle}</Typography>
+      <Typography
+        variant="subtitle1"
+        sx={{ color: light ? "grey.500" : "primary" }}
+      >
+        {subtitle}
+      </Typography>
     </Box>
   );
 };

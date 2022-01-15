@@ -31,7 +31,7 @@ const DeliveryPrice = () => {
   return (
     <Box>
       <Container maxWidth="xl">
-        <SectionHeading title="Доставка" subtitle="оиюлои " />
+        <SectionHeading title="Доставка" />
         <Grid container justifyContent="space-around">
           {data.map(item => (
             <Grid

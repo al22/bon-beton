@@ -87,11 +87,13 @@ const Hero = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "1rem", sm: "2rem", md: "3rem" }
+            bottom: { xs: "1rem", sm: "2rem", md: "3rem" },
+
+            boxSizing: "border-box"
           }}
         >
-          <Grid container justifyContent="space-around" spacing={3}>
-            <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
               <Button
                 startIcon={<PhoneIcon />}
                 component={Link}
@@ -111,7 +113,7 @@ const Hero = () => {
                 Звоните +7 (3953) 27-09-27
               </Button>
             </Grid>
-            <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
+            <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
               <Button
                 startIcon={<EmailIcon />}
                 component={Link}

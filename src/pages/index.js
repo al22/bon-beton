@@ -7,6 +7,7 @@ import {
 import CssBaseline from "@mui/material/CssBaseline";
 import Hero from "../components/hero";
 import Quality from "../components/quality";
+import CallToAction from "../components/cta";
 import ProductsPrice from "../components/products-price";
 import DeliveryPrice from "../components/delivery-price";
 import GoogleMap from "../components/map";
@@ -68,6 +69,7 @@ const IndexPage = () => {
 
         <Hero />
         <Quality />
+        <CallToAction />
         <ProductsPrice />
         <DeliveryPrice />
         <GoogleMap />
