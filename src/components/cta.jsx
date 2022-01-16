@@ -15,25 +15,31 @@ const CallToAction = () => {
           title="Заказывайте бетон и раствор за один звонок"
           subtitle="Cообщите марку и место куда надо доставить, оплатите при получении."
         />
-
-        <Button
-          startIcon={<PhoneIcon />}
-          component={Link}
-          href="tel: 8-3953-27-09-27"
-          variant="contained"
-          size="large"
-          sx={{
-            width: "300px",
-            textTransform: "none",
-            color: "#200F07",
-            bgcolor: "#D3B07A",
-            "&:hover": {
-              backgroundColor: "#fff"
-            }
-          }}
+        <div
+          data-sal="fade"
+          data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
+          data-sal-delay="300" // adds delay to the animation (from 5 to 1000 ms)
+          data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
         >
-          +7 (3953) 27-09-27
-        </Button>
+          <Button
+            startIcon={<PhoneIcon />}
+            component={Link}
+            href="tel: 8-3953-27-09-27"
+            variant="contained"
+            size="large"
+            sx={{
+              width: "300px",
+              textTransform: "none",
+              color: "#200F07",
+              bgcolor: "#D3B07A",
+              "&:hover": {
+                backgroundColor: "#fff"
+              }
+            }}
+          >
+            +7 (3953) 27-09-27
+          </Button>
+        </div>
       </Container>
     </Box>
   );
