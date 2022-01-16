@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Helmet } from "react-helmet";
 import {
   createTheme,
   ThemeProvider,
@@ -10,7 +11,7 @@ import Quality from "../components/quality";
 import CallToAction from "../components/cta";
 import ProductsPrice from "../components/products-price";
 import DeliveryPrice from "../components/delivery-price";
-import GoogleMap from "../components/map";
+//import GoogleMap from "../components/map";
 import Footer from "../components/footer";
 
 let theme = createTheme({
@@ -66,13 +67,23 @@ const IndexPage = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Helmet>
+          <meta charSet="utf-8" />
+          <meta
+            name="description"
+            content="Бетон и раствор в Братске от надежного производителя"
+          />
+          <title>Официальный сайт ООО "Бон-Бетон"</title>
+
+          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+        </Helmet>
 
         <Hero />
         <Quality />
         <CallToAction />
         <ProductsPrice />
         <DeliveryPrice />
-        <GoogleMap />
+        {/* <GoogleMap /> */}
         <Footer />
       </ThemeProvider>
     </>

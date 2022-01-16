@@ -10,17 +10,20 @@ const Quality = () => {
     {
       title: "Входной контроль",
       text: "Провереям качество каждой партии исходных материалов.",
-      image: "quality1"
+      image: "quality1",
+      alt: "Щебень."
     },
     {
       title: "Контроль прочности",
       text: "Заливаем кубики по каждой партии бетона. Ломаем на 7-ой и 20-ый день.",
-      image: "quality2"
+      image: "quality2",
+      alt: "Кубик бетона в прессе."
     },
     {
       title: "Контроль подвижности бетона",
       text: "Измеряем расплыв конуса каждой партии бетона.",
-      image: "quality3"
+      image: "quality3",
+      alt: "Измерение конуса."
     }
   ];
 
@@ -41,7 +44,7 @@ const Quality = () => {
 
   return (
     <Box>
-      <Container sx={{ maxWidth: { sm: "500px", md: "900px" } }}>
+      <Container sx={{ maxWidth: { sm: "500px", md: "1000px" } }}>
         <SectionHeading
           title="Качество под контролем"
           subtitle='В 2020 году Строительная лаборатория ООО "Бон-Бетон" прошла оценку о состоянии измерений в лаборатории, что значительно повлияло на качество выпускаемой нами продукции.'
@@ -65,9 +68,17 @@ const Quality = () => {
                 </Typography>
                 <Typography sx={{ mb: 2 }}>{item.text}</Typography>
               </Grid>
-              <Grid item md={6} xs={12}>
-                <Paper elevation={8}>
-                  <GatsbyImage image={image} alt="" />
+              <Grid
+                item
+                md={6}
+                xs={12}
+                sx={{
+                  pr: { md: items.indexOf(item) % 2 === 0 ? 6 : 0 },
+                  pl: { md: items.indexOf(item) % 2 !== 0 ? 6 : 0 }
+                }}
+              >
+                <Paper elevation={8} sx={{ p: 1 }}>
+                  <GatsbyImage image={image} alt={item.alt} />
                 </Paper>
               </Grid>
             </Grid>

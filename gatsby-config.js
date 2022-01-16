@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Bon-beton"
+    siteUrl: "https://www.bon-beton.ru",
+    title: "Бетон и раствор в Братске от надежного производителя"
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -22,6 +22,7 @@ module.exports = {
           include: /images/ // See below to configure properly
         }
       }
-    }
+    },
+    `gatsby-plugin-react-helmet`
   ]
 };
