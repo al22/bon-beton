@@ -1,11 +1,14 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { Container, Grid, Box, Paper, Typography } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import SectionHeading from "./section-heading";
 
 const Quality = () => {
+  const isMediumScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+
   const items = [
     {
       title: "Входной контроль",
@@ -63,19 +66,21 @@ const Quality = () => {
               }}
             >
               <Grid item md={6} xs={12} sx={{ my: "auto", pl: { md: 6 } }}>
-                <div
+                <Box
                   data-sal={
-                    items.indexOf(item) % 2 === 0 ? "slide-left" : "slide-right"
+                    !isMediumScreen
+                      ? items.indexOf(item) % 2 === 0
+                        ? "slide-left"
+                        : "slide-right"
+                      : "fade"
                   }
-                  data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
-                  //data-sal-delay="100" // adds delay to the animation (from 5 to 1000 ms)
-                  //data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+                  data-sal-duration="1000"
                 >
                   <Typography variant="h3" color="primary">
                     {item.title}
                   </Typography>
                   <Typography sx={{ mb: 2 }}>{item.text}</Typography>
-                </div>
+                </Box>
               </Grid>
               <Grid
                 item
