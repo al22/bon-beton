@@ -74,7 +74,7 @@ const Quality = () => {
                         : "slide-right"
                       : "fade"
                   }
-                  data-sal-duration="1000"
+                  data-sal-duration="2000"
                 >
                   <Typography variant="h3" color="primary">
                     {item.title}

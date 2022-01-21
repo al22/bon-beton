@@ -9,8 +9,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Hero from "../components/hero";
 import Quality from "../components/quality";
 import CallToAction from "../components/cta";
-import ProductsPrice from "../components/products-price";
-import DeliveryPrice from "../components/delivery-price";
+import Price from "../components/price";
+
+import Team from "../components/team";
 //import GoogleMap from "../components/map";
 import Footer from "../components/footer";
 
@@ -77,12 +78,12 @@ const IndexPage = () => {
 
           {/* <link rel="canonical" href="http://mysite.com/example" /> */}
         </Helmet>
-
         <Hero />
         <Quality />
         <CallToAction />
-        <ProductsPrice />
-        <DeliveryPrice />
+
+        {/* <Team /> */}
+        <Price />
         {/* <GoogleMap /> */}
         <Footer />
       </ThemeProvider>
