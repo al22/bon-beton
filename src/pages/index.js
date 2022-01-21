@@ -11,7 +11,7 @@ import Quality from "../components/quality";
 import CallToAction from "../components/cta";
 import Price from "../components/price";
 
-import Team from "../components/team";
+//import Team from "../components/team";
 //import GoogleMap from "../components/map";
 import Footer from "../components/footer";
 

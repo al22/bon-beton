@@ -1,8 +1,7 @@
 import React from "react";
 
-import { Container, Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
-import SectionHeading from "./section-heading";
 import Mixer from "../images/mixer.svg";
 
 const data = [
