@@ -1,45 +1,47 @@
 import React from "react";
 import { useTheme } from "@mui/material";
-import SectionHeading from "./section-heading";
-import { Container, Box, Button, Link } from "@mui/material";
+import { Container, Box, Button, Link, Typography } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
+import { StaticImage } from "gatsby-plugin-image";
 
 const CallToAction = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ bgcolor: theme.palette.primary.main, pb: 8 }}>
+    <Box sx={{ bgcolor: theme.palette.primary.main, pt: 13, pb: 13 }}>
       <Container maxWidth="md" sx={{ textAlign: "center" }}>
-        <SectionHeading
-          light={true}
-          title="Заказывайте бетон и раствор за один звонок"
-          subtitle="Cообщите марку и место куда надо доставить, оплатите при получении."
+        <StaticImage
+          style={{ borderRadius: "50%" }}
+          alt="Фотография менеджера по продажам"
+          src="../images/aromanyuk.jpg"
+          formats={["auto", "webp", "avif"]}
         />
-        <div
-          data-sal="fade"
-          data-sal-duration="1000" // changes duration of the animation (from 200 to 2000 ms)
-          data-sal-delay="300" // adds delay to the animation (from 5 to 1000 ms)
-          data-sal-easing="ease" // sets easing for the animation (see easings.net for reference)
+        <Box my={4} color="#ebcfa6">
+          <Typography sx={{ fontSize: "1.2rem" }}>
+            Ваш менеджер по продажам,
+          </Typography>
+          <Typography sx={{ fontSize: "1.2rem" }}>Александр Романюк</Typography>
+        </Box>
+        <Button
+          startIcon={<PhoneIcon />}
+          component={Link}
+          href="tel: 8-3953-27-09-27"
+          variant="contained"
+          size="large"
+          sx={{
+            width: "300px",
+            p: 1.2,
+            textTransform: "none",
+            color: "#200F07",
+            bgcolor: "#D3B07A",
+            "&:hover": {
+              backgroundColor: "#a88653"
+            },
+            fontSize: "1.2rem"
+          }}
         >
-          <Button
-            startIcon={<PhoneIcon />}
-            component={Link}
-            href="tel: 8-3953-27-09-27"
-            variant="contained"
-            size="large"
-            sx={{
-              width: "300px",
-              textTransform: "none",
-              color: "#200F07",
-              bgcolor: "#D3B07A",
-              "&:hover": {
-                backgroundColor: "#fff"
-              }
-            }}
-          >
-            +7 (3953) 27-09-27
-          </Button>
-        </div>
+          +7 (3953) 27-09-27
+        </Button>
       </Container>
     </Box>
   );

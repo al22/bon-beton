@@ -8,20 +8,20 @@ const data = [
   {
     id: 1,
     title: "2 м3",
-    price: 1200,
+    price: 1260,
     height: "100px"
   },
   {
     id: 2,
     title: "5-6 м3",
-    price: 1980,
+    price: 2100,
 
     height: "120px"
   },
   {
     id: 3,
     title: "7 м3",
-    price: 2280,
+    price: 2400,
     height: "140px"
   }
 ];
@@ -30,7 +30,7 @@ const DeliveryPrice = () => {
   return (
     <Box>
       <Typography sx={{ textAlign: "center", my: 4 }}>
-        Цены указаны в рублях с учетом НДС (20%) за 1 час работы бетоновоза
+        За 1 час работы бетоновоза в рублях с учетом НДС
       </Typography>
 
       <Grid container justifyContent="space-around">

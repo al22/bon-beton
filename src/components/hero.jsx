@@ -87,9 +87,7 @@ const Hero = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "1rem", sm: "2rem", md: "3rem" },
-
-            boxSizing: "border-box"
+            bottom: { xs: "1rem", sm: "2rem", md: "4rem" }
           }}
         >
           <Grid container spacing={3}>
