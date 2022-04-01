@@ -59,7 +59,7 @@ const Team = () => {
   return (
     <Box sx={{ bgcolor: "#EEE" }}>
       <Container maxWidth="xl">
-        <Box py={8}>
+        <Box py={13}>
           <SectionHeading title="Сотрудники компании" />
           <Grid container columnSpacing={1} justifyContent="space-around">
             {data.map(item => (
