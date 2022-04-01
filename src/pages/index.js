@@ -10,8 +10,7 @@ import Hero from "../components/hero";
 import Quality from "../components/quality";
 import CallToAction from "../components/cta";
 import Price from "../components/price";
-
-//import Team from "../components/team";
+import Team from "../components/team";
 //import GoogleMap from "../components/map";
 import Footer from "../components/footer";
 
@@ -68,23 +67,24 @@ const IndexPage = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Helmet>
-          <meta charSet="utf-8" />
+        <Helmet
+          htmlAttributes={{
+            lang: "ru"
+          }}
+          title='Официальный сайт ООО "Бон-Бетон"'
+        >
           <meta
             name="description"
-            content="Бетон и раствор в Братске от надежного производителя"
+            content="Бетон и раствор в Братске от надежного производителя."
           />
-          <title>Официальный сайт ООО "Бон-Бетон"</title>
-
-          {/* <link rel="canonical" href="http://mysite.com/example" /> */}
         </Helmet>
+
         <Hero />
         <Quality />
-        <CallToAction />
 
-        {/* <Team /> */}
+        <Team />
         <Price />
-        {/* <GoogleMap /> */}
+
         <Footer />
       </ThemeProvider>
     </>
