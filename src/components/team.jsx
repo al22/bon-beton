@@ -16,16 +16,16 @@ const data = [
     image: "aromanyuk",
     phone: "8 (902) 514-09-27",
     phoneHref: "tel: 8-902-514-09-27",
-    email: "aromanyuk@bon-beton.ru"
+    email: "info@bon-beton.ru"
   },
   {
     id: 2,
-    name: "Дмитрий Зайка",
+    name: "Дмитрий Заика",
     title: "Инженер по качеству",
     image: "dzaika",
     phone: "8 (950) 104-09-17",
     phoneHref: "tel: 8-950-104-09-17",
-    email: "dzaika@bon-beton.ru"
+    email: "lab@bon-beton.ru"
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const data = [
     image: "trozencweig",
     phone: "8 (952) 630-09-72",
     phoneHref: "tel: 8-952-630-09-72",
-    email: "trozenscweig@bon-beton.ru"
+    email: "bon-beton@yandex.ru"
   }
 ];
 
