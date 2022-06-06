@@ -46,23 +46,26 @@ const PriceTable = ({ data }) => {
     <Table>
       <TableHead>
         <TableRow>
-          <TableCellHead rowSpan={2} sx={{ textAlign: "left" }}>
+          <TableCellHead /* rowSpan={2} */ sx={{ textAlign: "left" }}>
             Марка
           </TableCellHead>
-          <TableCellHead rowSpan={2} sx={{ width: 0 }}>
+          <TableCellHead /* rowSpan={2}  */ sx={{ width: 0 }}>
+            Цена
+          </TableCellHead>
+          {/*      <TableCellHead rowSpan={2} sx={{ width: 0 }}>
             Без добавки
           </TableCellHead>
           <TableCellHead colSpan={5} sx={{ textAlign: "center" }}>
             С добавкой до
-          </TableCellHead>
+          </TableCellHead> */}
         </TableRow>
-        <TableRow>
+        {/*    <TableRow>
           <TableCellHead>-5 °C</TableCellHead>
           <TableCellHead>-10 °C</TableCellHead>
           <TableCellHead>-15 °C</TableCellHead>
           <TableCellHead>-20 °C</TableCellHead>
           <TableCellHead>-25 °C</TableCellHead>
-        </TableRow>
+        </TableRow>  */}
       </TableHead>
       <TableBody>
         {data.map((row, idx) => (
@@ -79,11 +82,11 @@ const PriceTable = ({ data }) => {
               {row.name}
             </TableCell>
             <TableCell>{row.price !== 0 ? row.price : "-"}</TableCell>
-            <TableCell>{row.price5 !== 0 ? row.price5 : "-"}</TableCell>
+            {/*    <TableCell>{row.price5 !== 0 ? row.price5 : "-"}</TableCell>
             <TableCell>{row.price10 !== 0 ? row.price10 : "-"}</TableCell>
             <TableCell>{row.price15 !== 0 ? row.price15 : "-"}</TableCell>
             <TableCell>{row.price20 !== 0 ? row.price20 : "-"}</TableCell>
-            <TableCell>{row.price25 !== 0 ? row.price25 : "-"}</TableCell>
+            <TableCell>{row.price25 !== 0 ? row.price25 : "-"}</TableCell> */}
           </TableRow>
         ))}
       </TableBody>
