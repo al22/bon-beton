@@ -1,5 +1,4 @@
 import * as React from "react";
-//import { Helmet } from "react-helmet";
 import {
   createTheme,
   ThemeProvider,
@@ -10,7 +9,6 @@ import Hero from "../components/hero";
 import Quality from "../components/quality";
 import Price from "../components/price";
 import Team from "../components/team";
-//import GoogleMap from "../components/map";
 import Footer from "../components/footer";
 
 
@@ -67,17 +65,8 @@ const IndexPage = () => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        {/*     <Helmet
-          htmlAttributes={{
-            lang: "ru"
-          }}
-          title='Официальный сайт ООО "Бон-Бетон"'
-        > */}
-        <meta
-          name="description"
-          content="Бетон и раствор в Братске от надежного производителя."
-        />
-        {/* </Helmet> */}
+
+
 
         <Hero />
         <Quality />
@@ -93,3 +82,12 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+
+export const Head = () =>
+(
+  <>
+    <title>Бетон и раствор в Братске от завода "Бон-Бетон"</title>
+    <meta name="description" content='Производим и доставляем качественный бетон и растворв городе Братске. Собственная аккредитированная лаборатория качества!' />
+  </>
+)
