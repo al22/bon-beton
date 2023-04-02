@@ -1,12 +1,18 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import {useStaticQuery, graphql} from "gatsby";
 
-import { useTheme } from "@mui/material";
+import {useTheme} from "@mui/material";
 
-import { Box, Container, Grid, Typography, Link } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Link
+} from "@mui/material";
 
 import SectionHeading from "./section-heading";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const data = [
   {
@@ -48,7 +54,10 @@ const Team = () => {
           name
           id
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }
@@ -57,11 +66,14 @@ const Team = () => {
   const images = query.allFile.nodes;
 
   return (
-    <Box sx={{ bgcolor: "#EEE" }}>
+    <Box sx={{bgcolor: "#EEE"}}>
       <Container maxWidth="xl">
         <Box py={13}>
           <SectionHeading title="Сотрудники компании" />
-          <Grid container columnSpacing={1} justifyContent="space-around">
+          <Grid
+            container
+            columnSpacing={1}
+            justifyContent="space-around">
             {data.map(item => (
               <Grid
                 item
@@ -71,12 +83,15 @@ const Team = () => {
                 sx={{
                   my: 8,
                   textAlign: "center"
-                }}
-              >
+                }}>
                 <GatsbyImage
-                  style={{ borderRadius: "50%" }}
-                  image={getImage(images.find(img => img.name === item.image))}
-                  alt={item.alt}
+                  style={{borderRadius: "50%"}}
+                  image={getImage(
+                    images.find(
+                      img => img.name === item.image
+                    )
+                  )}
+                  alt="Фотография сотрудника"
                 />
 
                 <Typography
@@ -84,16 +99,14 @@ const Team = () => {
                     color: theme.palette.primary.main,
                     fontWeight: 600,
                     mt: 2
-                  }}
-                >
+                  }}>
                   {item.name}
                 </Typography>
                 <Typography
                   variant="caption"
                   sx={{
                     color: theme.palette.primary.main
-                  }}
-                >
+                  }}>
                   {item.title}
                 </Typography>
                 <Link
@@ -104,8 +117,7 @@ const Team = () => {
                     color: "grey.600",
                     mt: 2
                   }}
-                  href={item.phoneHref}
-                >
+                  href={item.phoneHref}>
                   {item.phone}
                 </Link>
 
@@ -116,8 +128,7 @@ const Team = () => {
                     display: "block",
                     color: "grey.600"
                   }}
-                  href={"mailto:" + item.email}
-                >
+                  href={"mailto:" + item.email}>
                   {item.email}
                 </Link>
               </Grid>

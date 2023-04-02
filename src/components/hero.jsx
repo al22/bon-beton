@@ -1,22 +1,29 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { StaticImage } from "gatsby-plugin-image";
-import { Box, Grid, Typography, Button, Link } from "@mui/material";
+import {StaticImage} from "gatsby-plugin-image";
+import {
+  Box,
+  Grid,
+  Typography,
+  Button,
+  Link
+} from "@mui/material";
 
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Hero = () => {
-  const isMediumScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const isMediumScreen = useMediaQuery(theme =>
+    theme.breakpoints.down("md")
+  );
 
   return (
     <Box
       sx={{
         display: "grid",
-        minHeight: { lg: "100vh" },
-        maxHeight: { lg: "100vh" }
-      }}
-    >
+        minHeight: {lg: "100vh"},
+        maxHeight: {lg: "100vh"}
+      }}>
       {/* You can use a GatsbyImage component if the image is dynamic */}
       {isMediumScreen ? (
         <StaticImage
@@ -29,7 +36,7 @@ const Hero = () => {
           // You can optionally force an aspect ratio for the generated image
           //aspectRatio={1 / 1}
           // This is a presentational image, so the alt should be an empty string
-          alt=""
+          alt="Миксер"
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           src="../images/hero_md.jpg"
           formats={["auto", "webp", "avif"]}
@@ -45,7 +52,7 @@ const Hero = () => {
           // You can optionally force an aspect ratio for the generated image
           //aspectRatio={3 / 1}
           // This is a presentational image, so the alt should be an empty string
-          alt=""
+          alt="Миксер"
           // Assisi, Perúgia, Itália by Bernardo Ferrari, via Unsplash
           src="../images/hero.jpg"
           formats={["auto", "webp", "avif"]}
@@ -60,8 +67,7 @@ const Hero = () => {
           // This centers the other elements inside the hero component
           placeItems: "normal center",
           display: "grid"
-        }}
-      >
+        }}>
         {/* Any content here will be centered in the component */}
 
         <Box>
@@ -71,15 +77,13 @@ const Hero = () => {
             sx={{
               textAlign: "center",
               color: "grey.200",
-              pt: { xs: 1, sm: 2, md: 3 }
-            }}
-          >
+              pt: {xs: 1, sm: 2, md: 3}
+            }}>
             Бетон и раствор
           </Typography>
           <Typography
             variant="subtitle1"
-            sx={{ textAlign: "center", color: "grey.400" }}
-          >
+            sx={{textAlign: "center", color: "grey.400"}}>
             От надежного производителя в г. Братске
           </Typography>
         </Box>
@@ -87,11 +91,14 @@ const Hero = () => {
         <Box
           sx={{
             position: "absolute",
-            bottom: { xs: "1rem", sm: "2rem", md: "4rem" }
-          }}
-        >
+            bottom: {xs: "1rem", sm: "2rem", md: "4rem"}
+          }}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{textAlign: "center"}}>
               <Button
                 startIcon={<PhoneIcon />}
                 component={Link}
@@ -106,12 +113,15 @@ const Hero = () => {
                   "&:hover": {
                     backgroundColor: "#fff"
                   }
-                }}
-              >
+                }}>
                 Звоните +7 (3953) 27-09-27
               </Button>
             </Grid>
-            <Grid item xs={12} md={6} sx={{ textAlign: "center" }}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{textAlign: "center"}}>
               <Button
                 startIcon={<EmailIcon />}
                 component={Link}
@@ -126,9 +136,8 @@ const Hero = () => {
                   "&:hover": {
                     backgroundColor: "#fff"
                   },
-                  display: { xs: "none", md: "flex" }
-                }}
-              >
+                  display: {xs: "none", md: "flex"}
+                }}>
                 Пишите на info@bon-beton.ru
               </Button>
             </Grid>

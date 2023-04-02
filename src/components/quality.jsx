@@ -1,13 +1,21 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import {useStaticQuery, graphql} from "gatsby";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { Container, Grid, Box, Paper, Typography } from "@mui/material";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import {
+  Container,
+  Grid,
+  Box,
+  Paper,
+  Typography
+} from "@mui/material";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import SectionHeading from "./section-heading";
 
 const Quality = () => {
-  const isMediumScreen = useMediaQuery(theme => theme.breakpoints.down("md"));
+  const isMediumScreen = useMediaQuery(theme =>
+    theme.breakpoints.down("md")
+  );
 
   const items = [
     {
@@ -37,7 +45,10 @@ const Quality = () => {
           name
           id
           childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
       }
@@ -48,8 +59,11 @@ const Quality = () => {
   return (
     <Box>
       <Container
-        sx={{ pt: 13, pb: 16, maxWidth: { sm: "500px", md: "1000px" } }}
-      >
+        sx={{
+          pt: 13,
+          pb: 16,
+          maxWidth: {sm: "500px", md: "1000px"}
+        }}>
         <Box mb={8}>
           <SectionHeading
             title="Качество под контролем"
@@ -57,21 +71,28 @@ const Quality = () => {
           />
         </Box>
 
-        {items.map(item => {
-          const image = getImage(images.find(img => img.name === item.image));
+        {items.map((item, idx) => {
+          const image = getImage(
+            images.find(img => img.name === item.image)
+          );
 
           return (
-            <Box>
+            <Box key={idx}>
               <Grid
                 key={item.image}
                 container
                 sx={{
                   mt: 12,
                   flexDirection:
-                    items.indexOf(item) % 2 === 0 ? "row-reverse" : "row"
-                }}
-              >
-                <Grid item md={6} xs={12} sx={{ my: "auto", pl: { md: 6 } }}>
+                    items.indexOf(item) % 2 === 0
+                      ? "row-reverse"
+                      : "row"
+                }}>
+                <Grid
+                  item
+                  md={6}
+                  xs={12}
+                  sx={{my: "auto", pl: {md: 6}}}>
                   <Box
                     data-sal={
                       !isMediumScreen
@@ -80,12 +101,15 @@ const Quality = () => {
                           : "slide-right"
                         : "fade"
                     }
-                    data-sal-duration="2000"
-                  >
-                    <Typography variant="h3" color="primary">
+                    data-sal-duration="2000">
+                    <Typography
+                      variant="h3"
+                      color="primary">
                       {item.title}
                     </Typography>
-                    <Typography sx={{ mb: 2 }}>{item.text}</Typography>
+                    <Typography sx={{mb: 2}}>
+                      {item.text}
+                    </Typography>
                   </Box>
                 </Grid>
                 <Grid
@@ -93,12 +117,24 @@ const Quality = () => {
                   md={6}
                   xs={12}
                   sx={{
-                    pr: { md: items.indexOf(item) % 2 === 0 ? 6 : 0 },
-                    pl: { md: items.indexOf(item) % 2 !== 0 ? 6 : 0 }
-                  }}
-                >
-                  <Paper elevation={8} sx={{ p: 1 }}>
-                    <GatsbyImage image={image} alt={item.alt} />
+                    pr: {
+                      md:
+                        items.indexOf(item) % 2 === 0
+                          ? 6
+                          : 0
+                    },
+                    pl: {
+                      md:
+                        items.indexOf(item) % 2 !== 0
+                          ? 6
+                          : 0
+                    }
+                  }}>
+                  <Paper elevation={8} sx={{p: 1}}>
+                    <GatsbyImage
+                      image={image}
+                      alt={item.alt}
+                    />
                   </Paper>
                 </Grid>
               </Grid>

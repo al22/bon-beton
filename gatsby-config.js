@@ -15,6 +15,7 @@ module.exports = {
       }
     },
 
+
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -23,7 +24,6 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
