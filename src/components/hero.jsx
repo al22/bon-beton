@@ -49,6 +49,7 @@ const Hero = () => {
             // You can set a maximum height for the image, if you wish.
             //minHeight: 675
           }}
+          loading="eager"
           //layout="fullWidth"
           // You can optionally force an aspect ratio for the generated image
           //aspectRatio={3 / 1}
