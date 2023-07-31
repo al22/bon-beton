@@ -4,6 +4,7 @@ module.exports = {
     title: "Бетон и раствор в Братске от надежного производителя"
   },
   plugins: [
+    'gatsby-plugin-robots-txt',
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
