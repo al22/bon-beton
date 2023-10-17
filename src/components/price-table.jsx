@@ -53,19 +53,21 @@ const PriceTable = ({data}) => {
           </TableCellHead>
 
           <TableCellHead rowSpan={2} sx={{width: 200}}>
-            Цена, руб. с НДС
+            Без добавок
           </TableCellHead>
-          {/*  <TableCellHead colSpan={5} sx={{ textAlign: "center" }}>
+          <TableCellHead
+            colSpan={5}
+            sx={{textAlign: "center"}}>
             С добавкой до
-          </TableCellHead> */}
+          </TableCellHead>
         </TableRow>
-        {/*  <TableRow>
+        <TableRow>
           <TableCellHead>-5 °C</TableCellHead>
           <TableCellHead>-10 °C</TableCellHead>
           <TableCellHead>-15 °C</TableCellHead>
           <TableCellHead>-20 °C</TableCellHead>
           <TableCellHead>-25 °C</TableCellHead>
-        </TableRow> */}
+        </TableRow>
       </TableHead>
       <TableBody>
         {data.map((row, idx) => (
@@ -84,7 +86,7 @@ const PriceTable = ({data}) => {
             <TableCell>
               {row.price !== 0 ? row.price : "-"}
             </TableCell>
-            {/* <TableCell>
+            <TableCell>
               {row.price5 !== 0 ? row.price5 : "-"}
             </TableCell>
             <TableCell>
@@ -98,7 +100,7 @@ const PriceTable = ({data}) => {
             </TableCell>
             <TableCell>
               {row.price25 !== 0 ? row.price25 : "-"}
-            </TableCell> */}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
