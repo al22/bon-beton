@@ -1,27 +1,12 @@
 import React from "react";
 
-import {
-  Container,
-  Box,
-  Typography,
-  Tabs,
-  Tab,
-  Button
-} from "@mui/material";
+import { Container, Box, Typography, Tabs, Tab, Button } from "@mui/material";
 
 import SectionHeading from "./section-heading";
 import PriceTable from "./price-table";
 import DeliveryPrice from "./delivery-price";
 
-function createData(
-  name,
-  price,
-  price5,
-  price10,
-  price15,
-  price20,
-  price25
-) {
+function createData(name, price, price5, price10, price15, price20, price25) {
   return {
     name,
     price,
@@ -29,11 +14,11 @@ function createData(
     price10,
     price15,
     price20,
-    price25
+    price25,
   };
 }
 
-const mortyr = [
+/* const mortyr = [
   createData("М50", 5280, 6000, 6300, 6480, 6780, 6960),
   createData("М75", 6000, 6480, 6900, 7080, 7380, 7680),
   createData("М100", 6600, 7260, 7560, 7680, 8100, 8580),
@@ -49,19 +34,19 @@ const mortyr = [
     11000,
     11500
   )
-];
-
-/* const mortyr = [
-  createData("М50", 5280),
-  createData("М75", 6000),
-  createData("М100", 6600),
-  createData("М100 (Линамикс Р)", 6660),
-  createData("М150", 7080),
-  createData("М200", 7860),
-  createData("М300", 9060)
 ]; */
 
-const concrete = [
+const mortyr = [
+  createData("М75", 6300),
+  createData("М100", 6900),
+  createData("М100 (Линамикс Р)", 6960),
+  createData("М150", 7260),
+  createData("М200", 8160),
+  createData("М250", 8880),
+  createData("М300", 9600),
+];
+
+/* const concrete = [
   createData(
     "B7.5 (М100)",
     6060,
@@ -125,20 +110,20 @@ const concrete = [
     9960,
     10500
   )
-];
-
-/* const concrete = [
-  createData("B7.5 (М100)", 6060),
-  createData("B12.5 (М150)", 6300),
-  createData("B15 (М200)", 6600),
-  createData("B20 (М250)", 6960),
-  createData("B22.5 (М300)", 7380),
-  createData("B25 (М350)", 7800),
-  createData("B30 (М400)", 8160)
 ]; */
 
+const concrete = [
+  createData("B7.5 (М100)", 6360),
+  createData("B12.5 (М150)", 6600),
+  createData("B15 (М200)", 6900),
+  createData("B20 (М250)", 7260),
+  createData("B22.5 (М300)", 7680),
+  createData("B25 (М350)", 8100),
+  createData("B30 (М400)", 8460),
+];
+
 function TabPanel(props) {
-  const {children, value, index, ...other} = props;
+  const { children, value, index, ...other } = props;
 
   return (
     <Box
@@ -146,7 +131,8 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}>
+      {...other}
+    >
       {value === index && <Box>{children}</Box>}
     </Box>
   );
@@ -157,7 +143,7 @@ const ProductsPrice = () => {
   function a11yProps(index) {
     return {
       id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`
+      "aria-controls": `simple-tabpanel-${index}`,
     };
   }
 
@@ -175,34 +161,30 @@ const ProductsPrice = () => {
             value={value}
             onChange={handleChange}
             aria-label="Закладки с ценами на продукцию и доставку"
-            centered>
-            <Tab
-              label="Бетон"
-              {...a11yProps(0)}
-              sx={{fontSize: "1.2rem"}}
-            />
+            centered
+          >
+            <Tab label="Бетон" {...a11yProps(0)} sx={{ fontSize: "1.2rem" }} />
             <Tab
               label="Раствор"
               {...a11yProps(1)}
-              sx={{fontSize: "1.2rem"}}
+              sx={{ fontSize: "1.2rem" }}
             />
             <Tab
               label="Доставка"
               {...a11yProps(2)}
-              sx={{fontSize: "1.2rem"}}
+              sx={{ fontSize: "1.2rem" }}
             />
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <Typography sx={{textAlign: "center", my: 4}}>
+          <Typography sx={{ textAlign: "center", my: 4 }}>
             За 1 м<sup>3</sup> бетона в рублях с учетом НДС
           </Typography>
           <PriceTable data={concrete} />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Typography sx={{textAlign: "center", my: 4}}>
-            За 1 м<sup>3</sup> раствора в рублях с учетом
-            НДС
+          <Typography sx={{ textAlign: "center", my: 4 }}>
+            За 1 м<sup>3</sup> раствора в рублях с учетом НДС
           </Typography>
 
           <PriceTable data={mortyr} />
@@ -210,18 +192,19 @@ const ProductsPrice = () => {
         <TabPanel value={value} index={2}>
           <DeliveryPrice />
         </TabPanel>
-        <Box textAlign="center" my={8}>
+        {/*   <Box textAlign="center" my={8}>
           <Button
             variant="outlined"
             sx={{
               px: 20,
               color: "#200F07",
-              bgcolor: "#D3B07A"
+              bgcolor: "#D3B07A",
             }}
-            onClick={() => window.open("../prices.pdf")}>
+            onClick={() => window.open("../prices.pdf")}
+          >
             Скачать прайс
           </Button>
-        </Box>
+        </Box> */}
       </Container>
     </Box>
   );
