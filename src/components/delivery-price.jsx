@@ -30,7 +30,7 @@ const DeliveryPrice = () => {
   return (
     <Box>
       <Typography sx={{ textAlign: "center", my: 4 }}>
-        За 1 час работы бетоновоза в рублях с учетом НДС
+        За 1 час работы автобетоносмесителя в рублях с учетом НДС
       </Typography>
 
       <Grid container justifyContent="space-around">
