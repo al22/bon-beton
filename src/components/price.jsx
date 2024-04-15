@@ -192,7 +192,7 @@ const ProductsPrice = () => {
         <TabPanel value={value} index={2}>
           <DeliveryPrice />
         </TabPanel>
-        {/*   <Box textAlign="center" my={8}>
+        <Box textAlign="center" my={8}>
           <Button
             variant="outlined"
             sx={{
@@ -204,7 +204,7 @@ const ProductsPrice = () => {
           >
             Скачать прайс
           </Button>
-        </Box> */}
+        </Box>
       </Container>
     </Box>
   );
