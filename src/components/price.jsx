@@ -37,13 +37,13 @@ function createData(name, price, price5, price10, price15, price20, price25) {
 ]; */
 
 const mortyr = [
-  createData("М75", 6300),
-  createData("М100", 6900),
-  createData("М100 (Линамикс Р)", 6960),
-  createData("М150", 7260),
-  createData("М200", 8160),
-  createData("М250", 8880),
-  createData("М300", 9600),
+  createData("М75", 6360),
+  createData("М100", 6960),
+  createData("М100 (Линамикс Р)", 7080),
+  createData("М150", 7320),
+  createData("М200", 8340),
+  createData("М250", 9060),
+  createData("М300", 9780),
 ];
 
 /* const concrete = [
@@ -113,13 +113,13 @@ const mortyr = [
 ]; */
 
 const concrete = [
-  createData("B7.5 (М100)", 6360),
-  createData("B12.5 (М150)", 6600),
-  createData("B15 (М200)", 6900),
-  createData("B20 (М250)", 7260),
-  createData("B22.5 (М300)", 7680),
-  createData("B25 (М350)", 8100),
-  createData("B30 (М400)", 8460),
+  createData("B7.5 (М100)", 6480),
+  createData("B12.5 (М150)", 6660),
+  createData("B15 (М200)", 6960),
+  createData("B20 (М250)", 7380),
+  createData("B22.5 (М300)", 7800),
+  createData("B25 (М350)", 8220),
+  createData("B30 (М400)", 8640),
 ];
 
 function TabPanel(props) {
