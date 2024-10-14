@@ -8,21 +8,28 @@ const data = [
   {
     id: 1,
     title: "2 м3",
-    price: 1500,
-    height: "100px",
+    price: 1800,
+    height: "70px",
   },
   {
     id: 2,
-    title: "5-6 м3",
-    price: 2460,
+    title: "5 м3",
+    price: 2700,
 
-    height: "120px",
+    height: "100px",
   },
   {
     id: 3,
+    title: "6 м3",
+    price: 2940,
+
+    height: "110px",
+  },
+  {
+    id: 4,
     title: "7 м3",
-    price: 2700,
-    height: "140px",
+    price: 3180,
+    height: "120px",
   },
 ];
 
@@ -39,7 +46,7 @@ const DeliveryPrice = () => {
             item
             key={item.id}
             xs={12}
-            md={4}
+            md={3}
             sx={{
               textAlign: "center",
             }}
