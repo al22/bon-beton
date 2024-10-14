@@ -21,7 +21,7 @@ function createData(name, price, price5, price10, price15, price20, price25) {
 const mortyr = [
   createData("М75", 6360, 6780, 7260, 7440, 7800, 8100),
   createData("М100", 6960, 7740, 8040, 8160, 8580, 9060),
-  createData("М100 (Линамикс Р)", 6660, 0, 0, 0, 0, 0),
+  createData("М100 (Линамикс Р)", 7080, 0, 0, 0, 0, 0),
   createData("М150", 7320, 8100, 8340, 8640, 9000, 9540),
   createData("М200", 8340, 9300, 9540, 9720, 10020, 10680),
   createData("М250", 9060, 10020, 10260, 10560, 10860, 11400),
