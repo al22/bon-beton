@@ -18,7 +18,7 @@ function createData(name, price, price5, price10, price15, price20, price25) {
   };
 }
 
-const mortyr = [
+/* const mortyr = [
   createData("М75", 6360, 6780, 7260, 7440, 7800, 8100),
   createData("М100", 6960, 7740, 8040, 8160, 8580, 9060),
   createData("М100 (Линамикс Р)", 7080, 0, 0, 0, 0, 0),
@@ -26,19 +26,19 @@ const mortyr = [
   createData("М200", 8340, 9300, 9540, 9720, 10020, 10680),
   createData("М250", 9060, 10020, 10260, 10560, 10860, 11400),
   createData("М300", 9780, 10860, 11040, 11460, 11760, 12000),
+]; */
+
+const mortyr = [
+  createData("М75", 6600),
+  createData("М100", 7320),
+  createData("М100 (Линамикс Р)", 7440),
+  createData("М150", 7800),
+  createData("М200", 8760),
+  createData("М250", 9600),
+  createData("М300", 10260),
 ];
 
-/* const mortyr = [
-  createData("М75", 6360),
-  createData("М100", 6960),
-  createData("М100 (Линамикс Р)", 7080),
-  createData("М150", 7320),
-  createData("М200", 8340),
-  createData("М250", 9060),
-  createData("М300", 9780),
-];
- */
-const concrete = [
+/* const concrete = [
   createData("B7.5 (М100)", 6480, 7140, 7320, 7560, 7980, 8160),
   createData("B12.5 (М150)", 6660, 7320, 7560, 7740, 8160, 8400),
   createData("B15 (М200)", 6960, 7620, 7860, 8040, 8460, 8700),
@@ -48,17 +48,19 @@ const concrete = [
   createData("B30 (М400)", 8640, 9360, 9960, 10260, 10560, 11160),
   createData("B35 (М450)", 9120, 10200, 10740, 10920, 11220, 11820),
   createData("B40 (М500)", 9660, 10680, 11340, 11520, 11760, 12180),
-];
-
-/* const concrete = [
-  createData("B7.5 (М100)", 6480),
-  createData("B12.5 (М150)", 6660),
-  createData("B15 (М200)", 6960),
-  createData("B20 (М250)", 7380),
-  createData("B22.5 (М300)", 7800),
-  createData("B25 (М350)", 8220),
-  createData("B30 (М400)", 8640),
 ]; */
+
+const concrete = [
+  createData("B7.5 (М100)", 6780),
+  createData("B12.5 (М150)", 6960),
+  createData("B15 (М200)", 7320),
+  createData("B20 (М250)", 7800),
+  createData("B22.5 (М300)", 8280),
+  createData("B25 (М350)", 8760),
+  createData("B30 (М400)", 9180),
+  createData("B35 (М450)", 9660),
+  createData("B40 (М500)", 10260),
+];
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
