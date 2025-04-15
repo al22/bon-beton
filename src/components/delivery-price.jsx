@@ -14,14 +14,14 @@ const data = [
   {
     id: 2,
     title: "5 м3",
-    price: 2700,
+    price: 2760,
 
     height: "100px",
   },
   {
     id: 3,
     title: "6 м3",
-    price: 2940,
+    price: 3000,
 
     height: "110px",
   },
