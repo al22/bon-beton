@@ -8,7 +8,7 @@ const data = [
   {
     id: 1,
     title: "2 м3",
-    price: 1800,
+    price: 2100,
     height: "70px",
   },
   {
